@@ -1,13 +1,13 @@
 //
-//  Stanford_CS193p_courseUITests.swift
-//  Stanford CS193p courseUITests
+//  MemorizeUITests.swift
+//  MemorizeUITests
 //
 //  Created by Nicholas Ong on 30/5/21.
 //
 
 import XCTest
 
-class Stanford_CS193p_courseUITests: XCTestCase {
+class MemorizeUITests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
