@@ -41,7 +41,9 @@ struct CardView: View{
                     
                 }
                 else{
-                    RoundedRectangle(cornerRadius: 10.0).fill()
+                    if !card.isMatched{
+                        RoundedRectangle(cornerRadius: 10.0).fill()
+                    }  
                 }
             }.font(Font.system(size: min(geometry.size.width,geometry.size.height)*0.75))
         })
