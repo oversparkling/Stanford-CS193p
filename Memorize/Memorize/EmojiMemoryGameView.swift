@@ -9,24 +9,34 @@ import SwiftUI
 
 struct EmojiMemoryGameView: View {
     @ObservedObject var viewModel: EmojiMemoryGame
+    var theme: Theme
     var body: some View {
         //second parameter is 'inline' that returns a cardview
+        Text("Hello").onTapGesture{
+            print("Hello")
+            self.viewModel.newGame()
+        }
+        
         Grid(viewModel.cards){
             card in CardView(card: card).onTapGesture{
                 self.viewModel.choose(card: card)
             }.padding()
-        }.padding()
+        }.padding(1)
         .foregroundColor(Color.orange)
+        
+        Text(String(viewModel.model.points))
     }
 
         
-}
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        EmojiMemoryGameView(viewModel: EmojiMemoryGame())
-    }
-}
+
+//struct ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        EmojiMemoryGameView(viewModel: EmojiMemoryGame(theme))
+//    }
+//}
+
+
 
 struct CardView: View{
     var card : MemoryGame<String>.Card
@@ -51,4 +61,4 @@ struct CardView: View{
         }
         
     }
-
+}
