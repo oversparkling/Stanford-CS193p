@@ -13,7 +13,6 @@ struct EmojiMemoryGameView: View {
     var body: some View {
         //second parameter is 'inline' that returns a cardview
         Text("Hello").onTapGesture{
-            print("Hello")
             self.viewModel.newGame()
         }
         
@@ -21,7 +20,7 @@ struct EmojiMemoryGameView: View {
             card in CardView(card: card).onTapGesture{
                 self.viewModel.choose(card: card)
             }.padding()
-        }.padding(1)
+        }.padding()
         .foregroundColor(Color.orange)
         
         Text(String(viewModel.model.points))
